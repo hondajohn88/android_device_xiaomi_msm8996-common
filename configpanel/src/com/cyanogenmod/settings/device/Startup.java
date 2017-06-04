@@ -22,11 +22,9 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.SharedPreferences;
-import android.support.v7.preference.PreferenceManager;
 import android.util.Log;
 
-import org.cyanogenmod.internal.util.FileUtils;
+import com.cyanogenmod.settings.device.utils.FileUtils;
 
 public class Startup extends BroadcastReceiver {
 
@@ -35,8 +33,7 @@ public class Startup extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         final String action = intent.getAction();
-        if (cyanogenmod.content.Intent.ACTION_INITIALIZE_CM_HARDWARE.equals(action)) {
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        if (Intent.ACTION_BOOT_COMPLETED.equals(action)) {
 
             // Disable button settings if needed
             if (!hasButtonProcs()) {
@@ -59,19 +56,12 @@ public class Startup extends BroadcastReceiver {
                             " failed while restoring saved preference values");
                     }
                 }
-
-                // Send initial broadcasts
-                final boolean shouldEnablePocketMode =
-                        prefs.getBoolean(Constants.FP_WAKEUP_KEY, false) &&
-                        prefs.getBoolean(Constants.FP_POCKETMODE_KEY, false);
-                Utils.broadcastCustIntent(context, shouldEnablePocketMode);
             }
         }
     }
 
     static boolean hasButtonProcs() {
-        return (FileUtils.fileExists(Constants.BUTTON_SWAP_NODE) ||
-                FileUtils.fileExists(Constants.FP_HOME_KEY_NODE) ||
+        return (FileUtils.fileExists(Constants.FP_HOME_KEY_NODE) ||
                 FileUtils.fileExists(Constants.FP_WAKEUP_NODE));
     }
 

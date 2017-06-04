@@ -21,9 +21,7 @@
           android:versionCode="6"
           android:versionName="2.4" >
 
-    <protected-broadcast android:name="com.cyanogenmod.settings.device.CUST_UPDATE" />
-
-    <uses-permission android:name="cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS" />
+    <uses-permission android:name="android.permission.INJECT_EVENTS"/>
 
     <uses-sdk
         android:minSdkVersion="24" />
@@ -49,23 +47,26 @@
 
         <activity
             android:name=".ButtonSettingsActivity"
-            android:label="@string/button_panel_title">
+            android:label="@string/fingerprint_panel_title">
             <intent-filter>
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
             <meta-data
                 android:name="com.android.settings.icon"
-                android:resource="@drawable/ic_settings_additional_buttons" />
+                android:resource="@drawable/ic_fingerprint" />
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.device" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/fingerprint_panel_summary" />
         </activity>
 
         <activity android:name=".KeyHandler" />
 
         <receiver android:name=".Startup" >
             <intent-filter>
-                <action android:name="cyanogenmod.intent.action.INITIALIZE_CM_HARDWARE" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
     </application>
