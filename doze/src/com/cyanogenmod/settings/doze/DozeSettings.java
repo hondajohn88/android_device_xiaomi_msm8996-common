@@ -39,7 +39,7 @@ public class DozeSettings extends PreferenceActivity implements OnPreferenceChan
     private Context mContext;
     private SharedPreferences mPreferences;
 
-    private SwitchPreference mAmbientDisplayPreference;
+    private SwitchPreference mWakeupGesturesPreference;
     private SwitchPreference mPickUpPreference;
     private SwitchPreference mTiltAlwaysPreference;
     private SwitchPreference mHandwavePreference;
@@ -59,11 +59,11 @@ public class DozeSettings extends PreferenceActivity implements OnPreferenceChan
             showHelp();
         }
 
-        mAmbientDisplayPreference =
-            (SwitchPreference) findPreference(Utils.AMBIENT_DISPLAY_KEY);
+        mWakeupGesturesPreference =
+            (SwitchPreference) findPreference(Utils.WAKEUP_GESTURES_KEY);
         // Read from DOZE_ENABLED secure setting
-        mAmbientDisplayPreference.setChecked(dozeEnabled);
-        mAmbientDisplayPreference.setOnPreferenceChangeListener(this);
+        mWakeupGesturesPreference.setChecked(dozeEnabled);
+        mWakeupGesturesPreference.setOnPreferenceChangeListener(this);
 
         mTiltAlwaysPreference =
             (SwitchPreference) findPreference(Utils.TILT_ALWAYS_KEY);
@@ -110,8 +110,8 @@ public class DozeSettings extends PreferenceActivity implements OnPreferenceChan
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final String key = preference.getKey();
         final boolean value = (Boolean) newValue;
-        if (Utils.AMBIENT_DISPLAY_KEY.equals(key)) {
-            mAmbientDisplayPreference.setChecked(value);
+        if (Utils.WAKEUP_GESTURES_KEY.equals(key)) {
+            mWakeupGesturesPreference.setChecked(value);
             Utils.enableDoze(value, mContext);
             return true;
         } else if (Utils.PICK_UP_KEY.equals(key)) {

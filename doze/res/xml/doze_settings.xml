@@ -28,14 +28,14 @@
             android:defaultValue="false"
             android:title="@string/pick_up_title"
             android:summary="@string/pick_up_summary"
-            android:dependency="ambient_display" />
+            android:dependency="wakeup_gestures" />
 
         <SwitchPreference
             android:key="tilt_always"
             android:defaultValue="false"
             android:title="@string/always_enabled_title"
             android:summary="@string/always_enabled_summary"
-            android:dependency="ambient_display" />
+            android:dependency="wakeup_gestures" />
 
     </PreferenceCategory>
 
@@ -48,21 +48,21 @@
             android:defaultValue="false"
             android:title="@string/hand_wave_gesture_title"
             android:summary="@string/hand_wave_gesture_summary"
-            android:dependency="ambient_display" />
+            android:dependency="wakeup_gestures" />
 
         <SwitchPreference
             android:key="gesture_pocket"
             android:defaultValue="false"
             android:title="@string/pocket_gesture_title"
             android:summary="@string/pocket_gesture_summary"
-            android:dependency="ambient_display" />
+            android:dependency="wakeup_gestures" />
 
         <SwitchPreference
             android:key="proximity_always"
             android:defaultValue="false"
             android:title="@string/always_enabled_title"
             android:summary="@string/always_enabled_summary"
-            android:dependency="ambient_display" />
+            android:dependency="wakeup_gestures" />
 
     </PreferenceCategory>
 
