@@ -76,7 +76,7 @@ ro.sys.display.support=63
 drm.service.enabled=true
 
 # FRP
-#ro.frp.pst=/dev/block/bootdevice/by-name/frp
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # Graphics
 debug.egl.hw=1
