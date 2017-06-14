@@ -193,6 +193,10 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
+# Launcher
+PRODUCT_PACKAGES += \
+    Launcher3
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8996
