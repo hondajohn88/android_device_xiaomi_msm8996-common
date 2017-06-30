@@ -149,7 +149,6 @@ vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmqjpegdma.so
 vendor/lib/libmpbase.so
-vendor/lib/libois_lc898122.so
 vendor/lib/libmorpho_easy_hdr.so
 vendor/lib/libmorpho_hdr_checker.so
 vendor/lib/libmorpho_image_stab4.so
@@ -492,7 +491,7 @@ vendor/lib/libconnctrl.so
 # Perf
 bin/energy-awareness
 bin/iop
-vendor/bin/perfd
+vendor/bin/perfd|01f3154ec4e8bbfc726cbda152689693b91cba71
 vendor/etc/perf-profile0.conf
 vendor/etc/perf-profile1.conf
 vendor/etc/perf-profile2.conf
@@ -502,10 +501,10 @@ vendor/etc/perf-profile5.conf
 vendor/etc/perf-profile6.conf
 vendor/lib64/libqti-iop-client.so
 vendor/lib64/libqti-iop.so
-vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-perfd-client.so|272f3868f5790815ede1cab8ef01991fac0eebe4
 vendor/lib/libqti-iop-client.so
 vendor/lib/libqti-iop.so
-vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti-perfd-client.so|ebbebc024770f299c550747f91dc59834dcbc5cc
 
 # Peripheral manager
 bin/pm-proxy
@@ -523,8 +522,8 @@ vendor/lib64/libdisp-aba.so
 # QMI
 bin/irsc_util
 etc/permissions/qti_permissions.xml
--lib64/libqminvapi.so
--lib/libqminvapi.so
+lib64/libqminvapi.so
+lib/libqminvapi.so
 vendor/bin/pd-mapper
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so

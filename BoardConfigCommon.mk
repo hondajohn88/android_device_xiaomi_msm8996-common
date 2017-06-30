@@ -34,8 +34,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-ENABLE_CPUSETS := true
-
 TARGET_USES_64_BIT_BINDER := true
 
 # Bootloader
@@ -118,6 +116,14 @@ TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 # CNE and DPM
 BOARD_USES_QCNE := true
 
+# CPU
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
+TARGET_USES_INTERACTION_BOOST := true
+TARGET_POWERHAL_VARIANT := voxpopuli
+TARGET_USES_INTERACTION_BOOST := true
+-include device/voxpopuli/sepolicy/sepolicy.mk
+
 # Dex
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
@@ -170,7 +176,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 58846064640
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 
 # Power
-TARGET_POWERHAL_VARIANT := qcom
+BOARD_HAL_STATIC_LIBRARIES := libdumpstate.msm8996
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true

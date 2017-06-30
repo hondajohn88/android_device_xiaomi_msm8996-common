@@ -1,5 +1,3 @@
-lineage.dependencies
-
 [
   {
     "repository": "android_device_qcom_common",
