@@ -119,7 +119,6 @@ BOARD_USES_QCNE := true
 # CPU
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
-TARGET_USES_INTERACTION_BOOST := true
 TARGET_POWERHAL_VARIANT := voxpopuli
 TARGET_USES_INTERACTION_BOOST := true
 -include device/voxpopuli/sepolicy/sepolicy.mk
