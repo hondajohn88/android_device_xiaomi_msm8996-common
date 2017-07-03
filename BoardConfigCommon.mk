@@ -34,10 +34,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
-TARGET_USES_INTERACTION_BOOST := true
-
 TARGET_USES_64_BIT_BINDER := true
 
 # Bootloader
@@ -119,6 +115,13 @@ TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
 # CNE and DPM
 BOARD_USES_QCNE := true
+
+# CPU
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
+TARGET_POWERHAL_VARIANT := voxpopuli
+TARGET_USES_INTERACTION_BOOST := true
+-include device/voxpopuli/sepolicy/sepolicy.mk
 
 # Dex
 ifeq ($(HOST_OS),linux)
