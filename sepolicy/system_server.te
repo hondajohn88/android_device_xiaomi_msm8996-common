@@ -6,10 +6,6 @@ allow system_server sound_device:chr_file rw_file_perms;
 allow system_server sysfs_fpc_keyevents:file rw_file_perms;
 allow system_server sysfs_fpc_wakeup:file rw_file_perms;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 64c481098ad5e4c1e805261a0e9472e743833157
 # talk to perfd
 allow system_server perfd_data_file:dir search;
 allow system_server perfd_data_file:sock_file write;
