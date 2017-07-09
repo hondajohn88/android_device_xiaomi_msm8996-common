@@ -25,6 +25,10 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on init
+    # Create Power HAL tunables
+    mkdir /dev/voxpopuli 0555 system system
+
 on boot
     # Bring up CPUs
     trigger init-cpus
