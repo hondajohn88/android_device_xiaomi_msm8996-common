@@ -32,7 +32,7 @@ TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
+TARGET_2ND_CPU_VARIANT := kryo
 
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
@@ -57,7 +57,13 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8996
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := ../../../../../../prebuilts/gcc/linux-x86/aarch64/gcc-linaro-4.9.4/bin/aarch64-linux-gnu-
+
+SDCLANG := true
+
+SDCLANG_PATH := prebuilts/snapdragon-llvm/toolchains/llvm-Snapdragon_LLVM_for_Android_3.8/prebuilt/linux-x86_64/bin
+
+SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
