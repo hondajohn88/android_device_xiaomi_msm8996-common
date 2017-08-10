@@ -19,11 +19,13 @@
 
     <SwitchPreference
         android:key="fp_home"
+        android:defaultValue="true"
         android:title="@string/fingerprint_as_home_title"
         android:summary="@string/fingerprint_as_home_summary" />
 
     <SwitchPreference
         android:key="fp_wakeup"
+        android:defaultValue="false"
         android:title="@string/fingerprint_wakeup_title"
         android:summary="@string/fingerprint_wakeup_summary" />
 
