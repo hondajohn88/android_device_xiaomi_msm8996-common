@@ -36,6 +36,12 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 ENABLE_CPUSETS := true
 
+ENABLE_SCHEDBOOST := true
+
+TARGET_POWERHAL_VARIANT := voxpopuli
+TARGET_USES_INTERACTION_BOOST := true
+-include device/voxpopuli/sepolicy/sepolicy.mk
+
 TARGET_USES_64_BIT_BINDER := true
 
 # Bootloader
@@ -44,7 +50,7 @@ TARGET_NO_BOOTLOADER := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -52,7 +58,13 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8996
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := ../../../../../../prebuilts/gcc/linux-x86/aarch64/gcc-linaro-4.9.4/bin/aarch64-linux-gnu-
+
+SDCLANG := true
+
+SDCLANG_PATH := prebuilts/snapdragon-llvm/toolchains/llvm-Snapdragon_LLVM_for_Android_3.8/prebuilt/linux-x86_64/bin
+
+SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
@@ -170,7 +182,8 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 58846064640
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 
 # Power
-TARGET_POWERHAL_VARIANT := qcom
+#TARGET_POWERHAL_VARIANT := qcom
+TARGET_POWERHAL_VARIANT := voxpopuli
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true

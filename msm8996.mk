@@ -194,8 +194,8 @@ PRODUCT_PACKAGES += \
     libebtc
 
 # Launcher
-PRODUCT_PACKAGES += \
-    Launcher3
+#PRODUCT_PACKAGES += \
+#    Launcher3
 
 # Lights
 PRODUCT_PACKAGES += \
