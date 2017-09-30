@@ -25,4 +25,3 @@ allow perfd gpu_device:chr_file rw_file_perms;
 dontaudit perfd self:capability kill;
 
 allow perfd system_server:file write;
-allow perfd mediacodec:process signull;

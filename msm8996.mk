@@ -115,7 +115,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+    ParanoidCamera
 
 # CNE
 PRODUCT_PACKAGES += \
@@ -159,6 +159,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fs_config_files
 
+# Gallery
+PRODUCT_PACKAGES += \
+    SnapdragonGallery
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8996 \
@@ -194,8 +198,8 @@ PRODUCT_PACKAGES += \
     libebtc
 
 # Launcher
-#PRODUCT_PACKAGES += \
-#    Launcher3
+PRODUCT_PACKAGES += \
+    Launcher3
 
 # Lights
 PRODUCT_PACKAGES += \

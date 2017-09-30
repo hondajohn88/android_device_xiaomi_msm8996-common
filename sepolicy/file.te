@@ -11,6 +11,7 @@ type sysfs_fpc_proximity, sysfs_type, fs_type;
 type thermal_data_file, file_type;
 type netmgrd_data_file, file_type;
 
+
 # /data
 type perfd_data_file, file_type, data_file_type;
 
