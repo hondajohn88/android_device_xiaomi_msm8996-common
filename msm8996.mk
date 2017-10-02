@@ -115,7 +115,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+    ParanoidCamera
 
 # CNE
 PRODUCT_PACKAGES += \
@@ -158,6 +158,10 @@ PRODUCT_PACKAGES += \
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
+
+# Gallery
+PRODUCT_PACKAGES += \
+    SnapdragonGallery
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -215,10 +219,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-
-# Music
-PRODUCT_PACKAGES += \
-    VanillaMusic
 
 # NFC
 PRODUCT_PACKAGES += \
